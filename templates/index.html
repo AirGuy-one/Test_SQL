@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block add_to_head %}
+    <link rel="stylesheet" href="{% static 'test_db/css/style1.css' %}">
+{% endblock %}
+
+{% block main %}
+    <p class="title_name" style=""><b>This is main page</b> | <a href="{% url 'add_url' %}">Add smth to database</a></p>
+    {% for i in data %}
+        <div class="some">
+            <button type="submit"><a href="{% url 'home' %}">show</a></button>
+            <p class="information">{{ i.title }} | {{ i.text }} | {{ i.created }}</p>
+        </div>
+    {% endfor %}
+    <h1>H1 text</h1>
+{% endblock %}
